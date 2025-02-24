@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import infra1 from "../InfraStructure/img/infra1.jpg"
+import infra2 from "../InfraStructure/img/infra2.jpg"
+import playgraound from "../InfraStructure/img/playgraound.jpg"
+import schoolbus from "../InfraStructure/img/schoolbus.jpg"
 
 const InfrastructureGallery = () => {
   // Sample infrastructure images - replace with your actual images
 
   const images = [
-    { id: 1, src: infra1, alt: "Bridge infrastructure", title: "Modern Bridge" },
-    { id: 2, src: "/api/placeholder/600/400", alt: "Highway system", title: "Highway Network" },
-    { id: 3, src: "/api/placeholder/600/400", alt: "Dam construction", title: "Hydroelectric Dam" },
-    { id: 4, src: "/api/placeholder/600/400", alt: "Railway system", title: "Railway System" },
-    { id: 5, src: "/api/placeholder/600/400", alt: "Airport terminal", title: "International Airport" },
-    { id: 6, src: "/api/placeholder/600/400", alt: "Power plant", title: "Power Generation Facility" },
+    { id: 1, src: infra1, alt: "Playground", title: "Our Playing Ground " },
+    { id: 2, src: infra2, alt: "", title: "Highway Network" },
+    { id: 3, src: playgraound, alt: "Highway system", title: "PlayGround " },
+    { id: 4, src: schoolbus, alt: "Highway system", title: "School Bus Network" },
+   
   ];
 
   const [activeImage, setActiveImage] = useState(null);
@@ -30,7 +32,7 @@ const InfrastructureGallery = () => {
       <h2 className="text-3xl font-bold text-center mb-8">Infrastructure Showcase</h2>
       
       {/* Image Gallery Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
         {images.map((image) => (
           <div 
             key={image.id} 
@@ -40,7 +42,7 @@ const InfrastructureGallery = () => {
             <img 
               src={image.src} 
               alt={image.alt} 
-              className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-65 object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
               <h3 className="text-white font-semibold">{image.title}</h3>

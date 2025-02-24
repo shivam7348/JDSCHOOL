@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import smartclassroom from "../InfraStructure/img/smartclassroom.png"
 
 const SmartClassroomComponent = () => {
   const [activeFeature, setActiveFeature] = useState('interactive');
@@ -45,9 +46,9 @@ const SmartClassroomComponent = () => {
   return (
     <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
       {/* Header Image */}
-      <div className="relative h-48">
+      <div className="relative h-64">
         <img 
-          src="/api/placeholder/800/300" 
+          src={smartclassroom} 
           alt="Smart Classroom" 
           className="w-full h-full object-cover"
         />

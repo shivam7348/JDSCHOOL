@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import infra1 from "../InfraStructure/img/infra1.jpg"
+import SCHOOLLIBRARY from "../InfraStructure/img/SCHOOLLIBRARY.png" 
+import StudentCenter from "../InfraStructure/img/StudentCenter.png"
+import sport from "../InfraStructure/img/sport.png"
 
 const SchoolCampusShowcase = () => {
   // Campus areas with their details and images
@@ -7,44 +11,32 @@ const SchoolCampusShowcase = () => {
       id: 1,
       name: "Academic Buildings",
       description: "Modern classrooms and lecture halls equipped with the latest technology for interactive learning experiences.",
-      image: "/api/placeholder/600/400",
+      image: infra1,
       features: ["Smart classrooms", "Computer labs", "Study areas", "Faculty offices"]
     },
     {
       id: 2,
       name: "Library & Research Center",
       description: "A comprehensive library with extensive print and digital resources, quiet study spaces, and research facilities.",
-      image: "/api/placeholder/600/400",
+      image: SCHOOLLIBRARY,
       features: ["Digital archives", "Study rooms", "Research databases", "Reading lounges"]
     },
     {
       id: 3,
       name: "Student Center",
       description: "The heart of campus life where students can socialize, join clubs, and participate in various activities.",
-      image: "/api/placeholder/600/400",
+      image: StudentCenter,
       features: ["Dining hall", "Student clubs", "Recreation areas", "Event spaces"]
     },
     {
       id: 4,
       name: "Sports Facilities",
       description: "State-of-the-art athletic facilities including gymnasiums, fields, courts, and training centers.",
-      image: "/api/placeholder/600/400",
+      image: sport,
       features: ["Indoor gymnasium", "Swimming pool", "Sports fields", "Fitness center"]
     },
-    {
-      id: 5,
-      name: "Residential Halls",
-      description: "Comfortable and safe dormitories providing a supportive living environment for students.",
-      image: "/api/placeholder/600/400",
-      features: ["Student rooms", "Common areas", "Laundry facilities", "Resident advisors"]
-    },
-    {
-      id: 6,
-      name: "Science Laboratories",
-      description: "Specialized labs for biology, chemistry, physics, and other sciences with advanced equipment.",
-      image: "/api/placeholder/600/400",
-      features: ["Research equipment", "Safety protocols", "Experimental stations", "Teaching labs"]
-    }
+   
+   
   ];
 
   const [activeTab, setActiveTab] = useState(campusAreas[0].id);
@@ -152,9 +144,9 @@ const SchoolCampusShowcase = () => {
 
         {/* Campus Map Section */}
         <div className="mt-12 bg-white rounded-lg shadow-lg p-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Campus Map</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">School Buses</h2>
           <div className="bg-gray-100 h-64 flex items-center justify-center rounded-md">
-            <p className="text-gray-500">Interactive campus map would be displayed here</p>
+          <img src="https://busesandvans.tatamotors.com/assets/buses/files/2024-03/tata-skool-buses%20%281%29.jpg?VersionId=DOQZhv6vo6qEwl7.jjhG5qeHsFARrWO6" alt=""/>
           </div>
           <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
             <div className="bg-blue-50 p-3 rounded-md">
