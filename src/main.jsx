@@ -5,7 +5,6 @@ import { RouterProvider } from "react-router-dom";
 import jdSchoolStore from "./store/store";
 import { Provider } from "react-redux";
 import router from "./router";
-import AdminApp from "./admin/AdminApp";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 
@@ -24,7 +23,6 @@ root.render(
       {isAdminRoute ? (
         <AppWrapper>
           <ThemeProvider>
-            {/* <AdminApp router={adminRoutes} /> */}
             <AdminRoutes />
           </ThemeProvider>
         </AppWrapper>
