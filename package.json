@@ -1,6 +1,8 @@
 {
   "name": "latest",
   "private": true,
+  "main": "index.js",
+  "homepage": "./",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
