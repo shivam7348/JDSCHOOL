@@ -11,7 +11,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import slider1 from '../Slider/sliderImg/slider1.jpg';
 import slider2 from '../Slider/sliderImg/slider2.jpeg';
 import slider3 from '../Slider/sliderImg/slider3.jpg';
-import slider4 from '../Slider/sliderImg/slider4.jpeg';
 import slider5 from "../Pages/InfraStructure/img/infra1.jpg";
 
 const slides = [

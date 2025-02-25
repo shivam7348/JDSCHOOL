@@ -2,7 +2,6 @@ import React from "react";
 import { MdAttachEmail } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
-import ScrollToTopButton from "./ScrollToTopButton";
 
 const Footer = () => {
   return (
@@ -89,7 +88,6 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <ScrollToTopButton />
     </>
   );
 };

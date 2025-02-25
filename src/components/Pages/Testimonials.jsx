@@ -4,22 +4,25 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import testo1 from "../Pages/InfraStructure/img/testomonials/t-1.jpg"
+import testo2 from "../Pages/InfraStructure/img/testomonials/t-2.jpg"
+import testo3 from "../Pages/InfraStructure/img/testomonials/t-3.jpg"
 
 const testimonials = [
   {
-    img: "/api/placeholder/100/100",
+    img: testo1,
     quote: "Let us remember: One book, one pen, one child and one teacher can change the world.",
     name: "Rohit Sharma",
     designation: "Bsc, Engineering",
   },
   {
-    img: "/api/placeholder/100/100",
+    img: testo2,
     quote: "It's one of my favorite seasons of the year: Back to School. As a kid, I loved fresh school supplies, new outfits, the change of seasons, and the chance to crack open a new textbook.",
     name: "Sanjana Shegal",
     designation: "Bsc, Engineering",
   },
   {
-    img: "/api/placeholder/100/100",
+    img: testo3,
     quote: "This is a new year. A new beginning. And things will change.",
     name: "Sachin Sharma",
     designation: "Bsc, Engineering",
