@@ -1,6 +1,8 @@
 // src/components/Admission.js
 import React from 'react';
 import SmallBanner from '../../Banner/SmallBanner';
+import asdmissionOpen from "../InfraStructure/img/asdmissionOpen.png" 
+import backtoschool from "../InfraStructure/img/backtoschool.jpg"
 
 
 const Admission = () => {
@@ -8,8 +10,8 @@ const Admission = () => {
     <>
       {/* <Header /> */}
       <SmallBanner 
-        title="About Us" 
-        image="images/about/gal11.jpeg" 
+        title="" 
+        image= {backtoschool} 
       />
 
       <section className="bg-green-100 py-20">

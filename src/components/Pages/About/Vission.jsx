@@ -1,4 +1,5 @@
 import React from "react";
+import vissionImg from "../InfraStructure/img/vission.jpg"
 
 const Vission = () => {
   return (
@@ -6,7 +7,7 @@ const Vission = () => {
       {/* Page Banner */}
       <section
         className="pt-28 pb-32 bg-cover bg-center relative"
-        style={{ backgroundImage: "url('/images/page-banner-10.jpg')" }}
+        style={{ backgroundImage: `url(${vissionImg})`}}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="container mx-auto relative z-10 text-white text-center">
