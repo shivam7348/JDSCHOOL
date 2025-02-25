@@ -26,21 +26,21 @@ const PrivateRoute = () => {
 
 export default function AdminRoutes() {
   return (
-    <Router>
+    <Router basename="/admin">
       <Routes>
         {/* Authentication Routes */}
         <Route element={<AuthLayout />}>
-          <Route path="/admin" element={<SignIn />} />
+          <Route path="/" element={<SignIn />} />
         </Route>
 
         {/* Protected Admin Routes */}
         <Route element={<PrivateRoute />}>
           <Route element={<AppLayout />}>
-            <Route index path="/admin/dashboard" element={<Ecommerce />} />
-            <Route path="/admin/annualplanner" element={<AnnualPlanner />} />
-            <Route path="/admin/activity" element={<Activity />} />
-            <Route path="/admin/announcement" element={<Announcement />} />
-            <Route path="/admin/gallery" element={<Gallery />} />
+            <Route index path="/dashboard" element={<Ecommerce />} />
+            <Route path="/annualplanner" element={<AnnualPlanner />} />
+            <Route path="/activity" element={<Activity />} />
+            <Route path="/announcement" element={<Announcement />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Route>
         </Route>
 
