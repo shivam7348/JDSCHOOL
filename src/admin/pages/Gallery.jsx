@@ -113,16 +113,16 @@ export default function Gallery() {
         </button>
       </form>
       <div className="space-y-2">
-        {gallery.map((img) => (
+        {gallery?.map((img) => (
           <div
-            key={img._id}
+            key={img?._id}
             className="p-3 border rounded-md bg-gray-100 shadow-sm"
           >
-            {edit === img._id ? (
+            {edit === img?._id ? (
               <div className="space-y-2">
                 <img
                   src={
-                    editImage ? URL.createObjectURL(editImage) : img.image.url
+                    editImage ? URL.createObjectURL(editImage) : img?.image.url
                   }
                   alt="Preview"
                   className="w-full h-48 object-cover rounded-md"
@@ -134,7 +134,7 @@ export default function Gallery() {
                 />
                 <div className="flex space-x-2">
                   <button
-                    onClick={() => handleEdit(img._id)}
+                    onClick={() => handleEdit(img?._id)}
                     className="px-4 py-2 bg-green-500 text-white rounded-md"
                   >
                     Save
@@ -156,13 +156,13 @@ export default function Gallery() {
                 />
                 <div className="flex space-x-2">
                   <button
-                    onClick={() => setEdit(img._id)}
+                    onClick={() => setEdit(img?._id)}
                     className="px-2 py-1 bg-yellow-500 text-white rounded-md"
                   >
                     Edit
                   </button>
                   <button
-                    onClick={() => handleDelete(img._id)}
+                    onClick={() => handleDelete(img?._id)}
                     className="px-2 py-1 bg-red-500 text-white rounded-md"
                   >
                     Delete
