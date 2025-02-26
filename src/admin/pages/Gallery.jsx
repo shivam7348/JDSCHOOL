@@ -7,7 +7,7 @@ export default function Gallery() {
   const [gallery, setGallery] = useState([]);
   const [edit, setEdit] = useState(null);
   const [editImage, setEditImage] = useState(null);
-  const fileInputRef = useRef(null); // Reference for file input
+  const fileInputRef = useRef(null);
 
   useEffect(() => {
     fetchGallery();
@@ -18,7 +18,7 @@ export default function Gallery() {
       const response = await axios.get(
         `${import.meta.env.VITE_BACKEND_URL}/api/gallery/get`
       );
-      setGallery(response.data);
+      setGallery(response.data ?? []);
     } catch (error) {
       toast.error("Error fetching gallery");
       console.error("Error fetching gallery:", error);
@@ -43,7 +43,7 @@ export default function Gallery() {
         }
       );
       setImage(null);
-      if (fileInputRef.current) fileInputRef.current.value = ""; // Reset input field
+      if (fileInputRef.current) fileInputRef.current.value = "";
       toast.success("Image uploaded successfully");
       fetchGallery();
     } catch (error) {
@@ -87,7 +87,7 @@ export default function Gallery() {
       await axios.delete(
         `${import.meta.env.VITE_BACKEND_URL}/api/gallery/delete/${id}`
       );
-      setGallery(gallery.filter((img) => img._id !== id));
+      setGallery(gallery?.filter((img) => img?._id !== id) ?? []);
       toast.success("Image deleted successfully");
     } catch (error) {
       toast.error("Error deleting image");
@@ -101,9 +101,9 @@ export default function Gallery() {
       <form onSubmit={handleSubmit} className="mb-4">
         <input
           type="file"
-          ref={fileInputRef} // Assign ref to input
+          ref={fileInputRef}
           className="w-full p-2 border rounded-md shadow-sm focus:ring focus:ring-blue-300 mb-2"
-          onChange={(e) => setImage(e.target.files[0])}
+          onChange={(e) => setImage(e.target.files?.[0] ?? null)}
         />
         <button
           type="submit"
@@ -113,7 +113,7 @@ export default function Gallery() {
         </button>
       </form>
       <div className="space-y-2">
-        {gallery?.map((img) => (
+        {gallery?.map?.((img) => (
           <div
             key={img?._id}
             className="p-3 border rounded-md bg-gray-100 shadow-sm"
@@ -122,7 +122,7 @@ export default function Gallery() {
               <div className="space-y-2">
                 <img
                   src={
-                    editImage ? URL.createObjectURL(editImage) : img?.image.url
+                    editImage ? URL.createObjectURL(editImage) : img?.image?.url
                   }
                   alt="Preview"
                   className="w-full h-48 object-cover rounded-md"
@@ -130,7 +130,7 @@ export default function Gallery() {
                 <input
                   type="file"
                   className="w-full p-2 border rounded-md shadow-sm focus:ring focus:ring-blue-300 mb-2"
-                  onChange={(e) => setEditImage(e.target.files[0])}
+                  onChange={(e) => setEditImage(e.target.files?.[0] ?? null)}
                 />
                 <div className="flex space-x-2">
                   <button
@@ -150,7 +150,7 @@ export default function Gallery() {
             ) : (
               <div className="flex flex-col space-y-2">
                 <img
-                  src={img.image.url}
+                  src={img?.image?.url}
                   alt="Uploaded"
                   className="w-full h-48 object-cover rounded-md"
                 />

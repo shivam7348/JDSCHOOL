@@ -56,7 +56,7 @@ export default function Announcement() {
 
       // Update the announcements list with the edited Failed to delete announcement. Please try again.
       const updatedAnnouncements = announcements.map((announcement) =>
-        announcement._id === id ? response.data : announcement
+        announcement?._id === id ? response.data : announcement
       );
       setAnnouncements(updatedAnnouncements);
 
@@ -80,7 +80,7 @@ export default function Announcement() {
 
       // Remove the deleted announcement from the list
       const updatedAnnouncements = announcements.filter(
-        (announcement) => announcement._id !== id
+        (announcement) => announcement?._id !== id
       );
       setAnnouncements(updatedAnnouncements);
     } catch (error) {
@@ -112,12 +112,12 @@ export default function Announcement() {
 
       {/* List of announcements */}
       <div className="space-y-2">
-        {announcements.map((announcement) => (
+        {announcements?.map((announcement) => (
           <div
-            key={announcement._id}
+            key={announcement?._id}
             className="p-3 border rounded-md bg-gray-100 shadow-sm"
           >
-            {edit === announcement._id ? (
+            {edit === announcement?._id ? (
               // Edit mode
               <div className="space-y-2">
                 <textarea
@@ -144,19 +144,19 @@ export default function Announcement() {
             ) : (
               // Display mode
               <div className="flex justify-between items-center">
-                <p>{announcement.text}</p>
+                <p>{announcement?.text}</p>
                 <div className="flex space-x-2">
                   <button
                     onClick={() => {
-                      setEdit(announcement._id);
-                      setEditText(announcement.text);
+                      setEdit(announcement?._id);
+                      setEditText(announcement?.text);
                     }}
                     className="px-2 py-1 bg-yellow-500 text-white rounded-md"
                   >
                     Edit
                   </button>
                   <button
-                    onClick={() => handleDelete(announcement._id)}
+                    onClick={() => handleDelete(announcement?._id)}
                     className="px-2 py-1 bg-red-500 text-white rounded-md"
                   >
                     Delete
@@ -165,7 +165,7 @@ export default function Announcement() {
               </div>
             )}
           </div>
-        ))}
+        )) || <p>No announcements available.</p>}
       </div>
     </div>
   );

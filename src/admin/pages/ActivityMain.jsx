@@ -103,7 +103,7 @@ export default function Activity() {
 
       // Remove the deleted activity from the list
       const updatedActivities = activities.filter(
-        (activity) => activity._id !== id
+        (activity) => activity?._id !== id
       );
       setActivities(updatedActivities);
     } catch (error) {
@@ -151,7 +151,7 @@ export default function Activity() {
             key={activity._id}
             className="p-3 border rounded-md bg-gray-100 shadow-sm"
           >
-            {edit === activity._id ? (
+            {edit === activity?._id ? (
               // Edit mode
               <div className="space-y-2">
                 <input
@@ -191,7 +191,7 @@ export default function Activity() {
             ) : (
               // Display mode
               <div className="flex flex-col space-y-2">
-                <h1 className="text-xl font-bold">{activity.title}</h1>
+                <h1 className="text-xl font-bold">{activity?.title}</h1>
                 <p>{activity.description}</p>
                 <img
                   src={`${activity.image.url}`} // Display the uploaded image
@@ -201,9 +201,9 @@ export default function Activity() {
                 <div className="flex space-x-2">
                   <button
                     onClick={() => {
-                      setEdit(activity._id);
-                      setEditTitle(activity.title);
-                      setEditDescription(activity.description);
+                      setEdit(activity?._id);
+                      setEditTitle(activity?.title);
+                      setEditDescription(activity?.description);
                       setEditImage(null);
                     }}
                     className="px-2 py-1 bg-yellow-500 text-white rounded-md"
