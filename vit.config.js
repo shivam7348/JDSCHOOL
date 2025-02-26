@@ -4,10 +4,13 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    open: true, // Server start hone ke baad browser me khul jayega
+    // historyApiFallback hata diya kyunki Vite me nahi hota
   },
   build: {
-    outDir: "dist", // Default build output directory
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
-  base: "/", // Agar subdirectory me deploy karna ho to isko update karo
 });
