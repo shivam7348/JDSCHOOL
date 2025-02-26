@@ -1,5 +1,8 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
 export default defineConfig({
-  base: "./", // Assets का सही path लेने के लिए
+  base: "/", // 👈 Ensure assets are served from the correct base path
   plugins: [react()],
   build: {
     rollupOptions: {
